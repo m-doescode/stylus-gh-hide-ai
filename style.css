@@ -1,0 +1,34 @@
+/* GitHub: Hide AI buttons and links */
+
+/* Develop with copilot in issue sidebar */
+[class^="CopilotAgentModeButton"] {
+    display: none !important;
+}
+
+/* Copilot button in nav bar */
+:has(> [class^="CopilotImmersiveEmbedded"]) {
+    display: none !important;
+}
+
+/* Hide Copilot and MCP buttons from menu bar */
+:has(> [class^="prc-ActionList-ActionListContent"][href="/copilot"]),
+:has(> [class^="prc-ActionList-ActionListContent"][href="/mcp"]) {
+    display: none !important;
+}
+
+/* Hide models and copilot section from repo sidebar */
+[data-item-id="github_models_repo_settings"],
+.ActionListItem:has(> .ActionListContent > .ActionListItem-visual > .octicon-copilot) {
+    display: none !important;
+}
+
+/* Hide Copilot and models buttons from user settings menu and settings page */
+[href="/settings/copilot"],
+[href="/settings/models"] {
+    display: none !important;
+}
+
+/* Hide "Write with Copilot" button in issue composer footer */
+[data-testid="markdown-editor-footer"] > div > div:nth-child(2):has(> [class*="CreateIssueForm"]) {
+    display: none !important;
+}
